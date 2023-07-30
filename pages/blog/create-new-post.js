@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 
 const BlogPostForm = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [titleInputValue, setTitleInputValue] = useState("");
