@@ -3,10 +3,12 @@ import Head from "next/head";
 
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import Post from "../components/Blog-post";
 
 const Main = () => {
   const [showActivePosts, setShowActivePosts] = useState(true);
   const [showUpcomingPosts, setShowUpcomingPosts] = useState(false);
+
   const handleActiveBtnClick = () => {
     setShowActivePosts(true);
     setShowUpcomingPosts(false);
@@ -79,34 +81,12 @@ const Main = () => {
               </div>
               {showActivePosts ? (
                 <div className="blog-posts-list-items-table-item">
-                  <div className="blog-posts-list-items-table-item-data title">
-                    <span>Blog Post Title</span>
-                  </div>
-                  <div className="blog-posts-list-items-table-item-data date">
-                    <span>12/20/2025</span>
-                  </div>
-                  <div className="blog-posts-list-items-table-item-data edit">
-                    <a href={`/blog/edit-post/post-ID`}>
-                      <span>Edit</span>
-                    </a>
-                    <span> &gt;</span>
-                  </div>
+                  <Post title="Active Post" date="12 Jan 2023" id={1} />
                 </div>
               ) : null}
               {showUpcomingPosts ? (
                 <div className="blog-posts-list-items-table-item">
-                  <div className="blog-posts-list-items-table-item-data title">
-                    <span>Blog Post Title 2</span>
-                  </div>
-                  <div className="blog-posts-list-items-table-item-data date">
-                    <span>12/20/2025</span>
-                  </div>
-                  <div className="blog-posts-list-items-table-item-data edit">
-                    <a href={`/blog/edit-post/post-ID`}>
-                      <span>Edit</span>
-                    </a>
-                    <span> &gt; </span>
-                  </div>
+                  <Post title="Upcoimg Post" date="12 Jan 2024" id={2} />
                 </div>
               ) : null}
             </div>
